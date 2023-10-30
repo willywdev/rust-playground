@@ -5,7 +5,6 @@ use std::io;
 // :: = namespace operator (it's like a folder structure)
 
 fn main() {
-    println!("Please pick one of the functions to get more information!");
     guessing_game();
 }
 // Rust is an ahead-of-time compiled language,
@@ -51,7 +50,7 @@ fn main() {
 
 fn guessing_game() {
     println!("Guess the number:");
-    let mut _guess = String::new();
+    let mut guess = String::new();
     // let = create a variable
     // mut = mutable (variable can be changed), default: immutable (variables cannot be changed)
     // String::new() = create a new instance of a String
@@ -61,8 +60,23 @@ fn guessing_game() {
     // the compiler wouldn’t know how much space to reserve for the string and we
     // couldn’t store our data in it.
     io::stdin()
-        .read_line(&mut _guess)
+        .read_line(&mut guess)
         .expect("Failed to read line.");
 
-    println!("You guessed {_guess}");
+    println!("You guessed {guess}");
 }
+
+// :: = static method (associated functions and constants of a struct / enum
+// . = method (function) (methods on an instance of a struct / enum)
+// structs / enum = custom data types (like classes in JS)
+// instance of a struct / enum = object (like an object in JS)
+
+fn _create_variables() {
+    let _apples = 5; // immutable variable (can't be changed)
+    let mut _pears = 23; // mutable variable (can be changed)
+    _pears = 42; // change value of mutable variable
+                 // Convention: Use underscores _ before variables that are not used.
+                 // But avoid unused variables if possible
+}
+
+fn _receiving_user_input() {}
